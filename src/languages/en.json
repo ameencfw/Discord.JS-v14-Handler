@@ -1,0 +1,16 @@
+{
+  "commands": {
+    "ping": {
+      "reply": "Pong! 🏓",
+      "context_reply": "Ping! Hello, {user} 👋"
+    },
+    "setlang": {
+      "success": "Language updated to **{language}**.",
+      "invalid": "Unsupported language. Available options: {languages}."
+    }
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again later.",
+    "missing_permissions": "You do not have permission to run this command."
+  }
+}
