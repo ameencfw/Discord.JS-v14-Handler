@@ -1,5 +1,11 @@
 # Discord.js v14 Handler — Usage Guide
 
+<p align="center">
+      <img src="https://img.shields.io/badge/node-^v22.20.0-purple?style=for-the-badge" alt="Node.js">
+      <img src="https://img.shields.io/badge/discord.js-^v14-purple?style=for-the-badge" alt="discord.js">
+      <img src="https://img.shields.io/badge/version-latest-purple?style=for-the-badge" alt="Latest Version">
+</p>
+
 Welcome! This repository contains a production-ready Discord bot starter that mixes slash commands, prefix commands, context menus, MongoDB, and multi-language support. This README focuses on **how to use** each part so you can ship features quickly.
 
 ---
