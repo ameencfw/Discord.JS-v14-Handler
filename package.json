@@ -1,0 +1,32 @@
+{
+  "name": "discordjs-v14-handler",
+  "version": "1.0.0",
+  "description": "Modern and scalable Discord.js v14+ bot handler with MongoDB and localization.",
+  "main": "src/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/index.js",
+    "deploy:commands": "node scripts/deploy-commands.js",
+    "lint": "eslint ."
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "dependencies": {
+    "discord.js": "^14.16.3",
+    "dotenv": "^16.4.5",
+    "mongoose": "^8.6.2"
+  },
+  "devDependencies": {
+    "eslint": "^9.9.0"
+  },
+  "keywords": [
+    "discord",
+    "discord.js",
+    "bot",
+    "handler",
+    "mongo",
+    "localization"
+  ],
+  "license": "MIT"
+}
