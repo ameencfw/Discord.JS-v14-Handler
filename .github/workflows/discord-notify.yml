@@ -52,7 +52,7 @@ jobs:
 
             # Escape double quotes for later JSON generation
             SAFE_MSG=$(echo "$COMMIT_MSG" | sed 's/"/\\"/g')
-            DESC="${DESC}[\`${SHORT_ID}\`](${COMMIT_URL}) ${SAFE_MSG} – ${COMMIT_AUTHOR}\n"
+            DESC="${DESC}[\`${SHORT_ID}\`](${COMMIT_URL}) ${SAFE_MSG} – ${COMMIT_AUTHOR}"
           done
 
           # If no commits found, put a generic message
