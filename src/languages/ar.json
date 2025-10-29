@@ -1,0 +1,16 @@
+{
+  "commands": {
+    "ping": {
+      "reply": "بونغ! 🏓",
+      "context_reply": "بونغ! مرحباً، {user} 👋"
+    },
+    "setlang": {
+      "success": "تم تحديث اللغة إلى **{language}**.",
+      "invalid": "لغة غير مدعومة. الخيارات المتاحة: {languages}."
+    }
+  },
+  "errors": {
+    "generic": "حدث خطأ ما. الرجاء المحاولة لاحقاً.",
+    "missing_permissions": "ليس لديك صلاحية لاستخدام هذا الأمر."
+  }
+}
