@@ -21,7 +21,6 @@ jobs:
           AVATAR_URL="https://github.com/${ACTOR}.png"
           COMMITS_COUNT=$(jq '.commits | length' "$EVENT_FILE" 2>/dev/null || echo 0)
 
-          # fallback if no commits
           if [ "$COMMITS_COUNT" -eq 0 ]; then
             if jq -e '.head_commit' "$EVENT_FILE" >/dev/null 2>&1; then
               COMMITS_COUNT=1
@@ -32,7 +31,7 @@ jobs:
           TITLE="[$REPO:$BRANCH] ${COMMITS_COUNT} new commit(s)"
 
           DESC=""
-          MAX=3
+          MAX=5
           for i in $(seq 0 $((COMMITS_COUNT-1))); do
             if [ "$i" -ge "$MAX" ]; then break; fi
 
@@ -44,16 +43,20 @@ jobs:
             COMMIT_AUTHOR=$(jq -r ".commits[$i].author.name // .commits[$i].author.username // .commits[$i].author.email // \"${ACTOR}\"" "$EVENT_FILE")
 
             SAFE_MSG=$(echo "$COMMIT_MSG" | sed 's/"/\\"/g')
-            DESC="${DESC}[\`${SHORT_ID}\`](${COMMIT_URL}) ${SAFE_MSG} – ${COMMIT_AUTHOR}\n"
+            # add a REAL newline
+            DESC="${DESC}[\`${SHORT_ID}\`](${COMMIT_URL}) ${SAFE_MSG} – ${COMMIT_AUTHOR}\\n"
           done
 
           [ -z "$DESC" ] && DESC="No commit details available."
+
+          # Discord expects actual newline characters, so convert \\n to \n in JSON safely
+          DESC_CLEAN=$(echo -e "$DESC")
 
           JSON_PAYLOAD=$(jq -n \
             --arg author "$ACTOR" \
             --arg avatar "$AVATAR_URL" \
             --arg title "$TITLE" \
-            --arg desc "$DESC" \
+            --arg desc "$DESC_CLEAN" \
             --arg repo_url "https://github.com/${REPO}/commits/${BRANCH}" \
             '{
               embeds: [
