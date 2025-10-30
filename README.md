@@ -252,4 +252,4 @@ Happy building! If this starter saves you time, consider starring the repo and s
 
 ## License
 
-This project is distributed under the [MIT License](LICENSE). © AmtiXDev ([@mutesuffering](https://github.com/mutesuffering))
+This project is distributed under the [MIT License](LICENSE). © AmtiXDev ([@mutesuffering](https://github.com/mutesuffering)).
