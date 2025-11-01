@@ -248,6 +248,10 @@ npm run deploy:commands
 
 Happy building! If this starter saves you time, consider starring the repo and sharing improvements.
 
+For any issues or inquiries, feel free to reach out on our Discord server:
+
+[![Discord Banner](https://api.weblutions.com/discord/invite/fDkjPNN6sP/)](https://discord.gg/fDkjPNN6sP)
+
 ---
 
 ## License
